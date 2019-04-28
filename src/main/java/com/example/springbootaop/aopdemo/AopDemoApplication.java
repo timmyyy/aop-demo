@@ -1,6 +1,7 @@
 package com.example.springbootaop.aopdemo;
 
 import com.example.springbootaop.aopdemo.service.MyService;
+import com.example.springbootaop.aopdemo.service.MyServiceInt;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,9 +13,9 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy(proxyTargetClass = false)
 public class AopDemoApplication {
 
-    private final MyService myService;
+    private final MyServiceInt myService;
 
-    public AopDemoApplication(MyService myService) {
+    public AopDemoApplication(MyServiceInt myService) {
         this.myService = myService;
     }
 
