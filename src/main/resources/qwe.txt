@@ -1,0 +1,66 @@
+Spring aop bytecode creation
+	I remember transactional proxies - their bytecode?
+
+- when and how the bytecode is created?
+	- spring aop proxies
+	- @transactional proxies - use spring aop
+
+- what kind of example do I present?
+	- I think it's more like what bytecode it generates and how it looks as java code?
+
+
+
+Overall plan
+	АОП в общем
+		вступление, для чего Что такое аоп?
+			парадигма программирования
+			предложена инженерами исследовательского центра Ксерокс в 2001г, тогда же написан фреймворк для джавы AspectJ
+			в центре - аспект, как противопоставление классу, но на самом деле, она дополняет ооп, помогает для выделения в модуль сквозной функциональности
+				например security
+				logging
+				monitoring
+				caching
+				concurrency control
+				transactions
+				Improving domain logic
+		AOP elements
+			aspect
+			join point
+			pointcut
+			advice
+				Before advice
+				after
+				after returning
+				after throwing
+				around
+			introduction - Добавление методов и полей классам в рантайме
+		популярные АОП фреймворки
+	аоп в спринге
+		general
+			Играет ключевую роль, дополняет IoC
+			spring aop != AspectJ. Spring uses AspectJ
+		declaration type
+			Schema-based
+			@AspectJ annotations
+		aspecting method
+			proxy - spring uses cglib or jdk - spring aop uses proxy only
+			subclass
+		advice types
+
+		Weaving
+			Load-time weaving (LTW). - can made spring do this
+			Compile-time weaving (CTW). - only by using ajc
+			Runtime - here is Spring aop, in startup
+		про Transactional
+			Как работает - написать код, посомтреть в дебаггере
+		Генерируемый байткод - не нашел как посмотреть, вроде можно через javaagent
+	заключение
+		плюсы
+		минусы
+		документация
+			https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop
+
+
+	- осталовь неясно
+		EnableAspectJAutoProxy
+		почему мой сервис оборачивается cglib proxy
